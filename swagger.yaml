@@ -18,7 +18,6 @@ tags:
 - name: "author"
   description: "Everything about your author"
 schemes:
-- "http"
 - "https"
 paths:
   /book/{isbn}:
