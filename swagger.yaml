@@ -10,8 +10,8 @@ info:
   license:
     name: "Apache 2.0"
     url: "http://www.apache.org/licenses/LICENSE-2.0.html"
-host: "192.168.65.10:8080"
-basePath: "/mocks"
+host: "bruno-teksial.github.io"
+basePath: "/api/mocks"
 tags:
 - name: "book"
   description: "Access to book"
