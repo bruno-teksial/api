@@ -1,6 +1,17 @@
 ## Api Interface
 `swagger.yaml`
 
+Attendre 2-5 minutes pour la prise en compte des changments dans le fichier `swagger.yaml`
+
+
+## Mocks
+
+> `./mocks`
+> 
+> `./mocks/author`
+> 
+> `./mocks/book`
+
 
 ## Installation
 
