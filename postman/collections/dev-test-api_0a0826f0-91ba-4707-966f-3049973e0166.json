@@ -1,0 +1,2188 @@
+{
+    "info": {
+        "_postman_id": "883ffcd9-0ba4-43c4-bd11-fd53472efac6",
+        "name": "dev-test-api",
+        "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+    },
+    "item": [
+        {
+            "name": "_Mocks",
+            "item": [
+                {
+                    "name": "Cee Mock",
+                    "event": [
+                        {
+                            "listen": "test",
+                            "script": {
+                                "id": "c9b92ac8-fac7-432e-8ab3-db5f2421d867",
+                                "exec": [
+                                    "// Test status\r",
+                                    "pm.test(\"Find a cee sheet - test status\", function(){\r",
+                                    "    pm.response.to.have.status(200);\r",
+                                    "});\r",
+                                    "\r",
+                                    "// Test content\r",
+                                    "pm.test(\"Find a cee sheet - test content\", function(){\r",
+                                    "    var jsonData = pm.response.json();\r",
+                                    "    pm.expect(jsonData).to.have.property('name');\r",
+                                    "    pm.expect(jsonData).to.have.property('version');\r",
+                                    "    pm.expect(jsonData).to.have.property('metadata');\r",
+                                    "});"
+                                ],
+                                "type": "text/javascript"
+                            }
+                        }
+                    ],
+                    "id": "19de2a25-163f-468a-9772-9a591a623f99",
+                    "protocolProfileBehavior": {
+                        "disableBodyPruning": true
+                    },
+                    "request": {
+                        "auth": {
+                            "type": "oauth2",
+                            "oauth2": [
+                                {
+                                    "key": "scope",
+                                    "value": "mocks/read",
+                                    "type": "string"
+                                },
+                                {
+                                    "key": "grant_type",
+                                    "value": "client_credentials",
+                                    "type": "string"
+                                },
+                                {
+                                    "key": "accessTokenUrl",
+                                    "value": "https://external.auth.eu-west-3.amazoncognito.com//oauth2/token",
+                                    "type": "string"
+                                },
+                                {
+                                    "key": "clientSecret",
+                                    "value": "11arpbtak1t6g57gkc53lm3m91lcd4uos7da659vnlv0tt1eud61",
+                                    "type": "string"
+                                },
+                                {
+                                    "key": "clientId",
+                                    "value": "33gpfmgf1sh1erbkfrin261p0h",
+                                    "type": "string"
+                                },
+                                {
+                                    "key": "redirect_uri",
+                                    "value": "http://localhost:3002",
+                                    "type": "string"
+                                },
+                                {
+                                    "key": "client_authentication",
+                                    "value": "body",
+                                    "type": "string"
+                                },
+                                {
+                                    "key": "addTokenTo",
+                                    "value": "header",
+                                    "type": "string"
+                                },
+                                {
+                                    "key": "state",
+                                    "value": "{{$randomUUID}}",
+                                    "type": "string"
+                                },
+                                {
+                                    "key": "authUrl",
+                                    "value": "https://external.auth.eu-west-3.amazoncognito.com",
+                                    "type": "string"
+                                },
+                                {
+                                    "key": "useBrowser",
+                                    "value": false,
+                                    "type": "boolean"
+                                },
+                                {
+                                    "key": "tokenName",
+                                    "value": "auth",
+                                    "type": "string"
+                                }
+                            ]
+                        },
+                        "method": "GET",
+                        "header": [],
+                        "url": {
+                            "raw": "{{http}}://{{url}}/mocks/{{version}}/cees",
+                            "protocol": "{{http}}",
+                            "host": [
+                                "{{url}}"
+                            ],
+                            "path": [
+                                "mocks",
+                                "{{version}}",
+                                "cees"
+                            ]
+                        }
+                    },
+                    "response": []
+                },
+                {
+                    "name": "Organizations Mock",
+                    "event": [
+                        {
+                            "listen": "test",
+                            "script": {
+                                "id": "32fd5716-bab7-464b-899e-597c6a47a47b",
+                                "exec": [
+                                    "// Test status\r",
+                                    "pm.test(\"Find a cee sheet - test status\", function(){\r",
+                                    "    pm.response.to.have.status(200);\r",
+                                    "});\r",
+                                    "\r",
+                                    "// Test content\r",
+                                    "pm.test(\"Find a cee sheet - test content\", function(){\r",
+                                    "    var jsonData = pm.response.json();\r",
+                                    "    pm.expect(jsonData).to.have.property('name');\r",
+                                    "    pm.expect(jsonData).to.have.property('version');\r",
+                                    "    pm.expect(jsonData).to.have.property('metadata');\r",
+                                    "});"
+                                ],
+                                "type": "text/javascript"
+                            }
+                        }
+                    ],
+                    "id": "2887045a-bba4-499c-b63f-a97f9bc03190",
+                    "protocolProfileBehavior": {
+                        "disableBodyPruning": true
+                    },
+                    "request": {
+                        "auth": {
+                            "type": "apikey",
+                            "apikey": [
+                                {
+                                    "key": "value",
+                                    "value": "{{x-api-key}}",
+                                    "type": "string"
+                                },
+                                {
+                                    "key": "key",
+                                    "value": "x-api-key",
+                                    "type": "string"
+                                },
+                                {
+                                    "key": "in",
+                                    "value": "header",
+                                    "type": "string"
+                                }
+                            ]
+                        },
+                        "method": "GET",
+                        "header": [],
+                        "url": {
+                            "raw": "{{http}}://{{url}}/mocks/organizations",
+                            "protocol": "{{http}}",
+                            "host": [
+                                "{{url}}"
+                            ],
+                            "path": [
+                                "mocks",
+                                "organizations"
+                            ]
+                        }
+                    },
+                    "response": []
+                },
+                {
+                    "name": "Precarity Mock",
+                    "event": [
+                        {
+                            "listen": "test",
+                            "script": {
+                                "id": "5c165c48-3d3f-43b4-b53c-504bf55fc5fe",
+                                "exec": [
+                                    "// Test status\r",
+                                    "pm.test(\"Find a cee sheet - test status\", function(){\r",
+                                    "    pm.response.to.have.status(200);\r",
+                                    "});\r",
+                                    "\r",
+                                    "// Test content\r",
+                                    "pm.test(\"Find a cee sheet - test content\", function(){\r",
+                                    "    var jsonData = pm.response.json();\r",
+                                    "    pm.expect(jsonData).to.have.property('name');\r",
+                                    "    pm.expect(jsonData).to.have.property('version');\r",
+                                    "    pm.expect(jsonData).to.have.property('metadata');\r",
+                                    "});"
+                                ],
+                                "type": "text/javascript"
+                            }
+                        }
+                    ],
+                    "id": "4deb6343-20f3-4b90-9183-15dfc6c50989",
+                    "protocolProfileBehavior": {
+                        "disableBodyPruning": true
+                    },
+                    "request": {
+                        "auth": {
+                            "type": "apikey",
+                            "apikey": [
+                                {
+                                    "key": "value",
+                                    "value": "{{x-api-key}}",
+                                    "type": "string"
+                                },
+                                {
+                                    "key": "key",
+                                    "value": "x-api-key",
+                                    "type": "string"
+                                },
+                                {
+                                    "key": "in",
+                                    "value": "header",
+                                    "type": "string"
+                                }
+                            ]
+                        },
+                        "method": "GET",
+                        "header": [],
+                        "url": {
+                            "raw": "{{http}}://{{url}}/mocks/precarite",
+                            "protocol": "{{http}}",
+                            "host": [
+                                "{{url}}"
+                            ],
+                            "path": [
+                                "mocks",
+                                "precarite"
+                            ]
+                        }
+                    },
+                    "response": []
+                }
+            ],
+            "id": "2ae8c9d8-1c51-45f8-a80c-8978dda72327"
+        },
+        {
+            "name": "Cee",
+            "item": [
+                {
+                    "name": "New Cee",
+                    "event": [
+                        {
+                            "listen": "test",
+                            "script": {
+                                "id": "cff503ce-6a0b-4cec-aba7-059c22d768d8",
+                                "exec": [
+                                    "// Get name + version\r",
+                                    "var data = JSON.parse(request.data);\r",
+                                    "postman.setEnvironmentVariable(\"cee_sheet_name\", data.name);\r",
+                                    "postman.setEnvironmentVariable(\"cee_sheet_version\", data.version);\r",
+                                    "tests[\"id = \" + data.name] = true; \r",
+                                    "tests[\"id = \" + data.version] = true; \r",
+                                    "\r",
+                                    "// Test status\r",
+                                    "pm.test(\"Create a new cee sheet - test status\", function(){\r",
+                                    "    pm.response.to.have.status(201);\r",
+                                    "});\r",
+                                    "\r",
+                                    "// Test content\r",
+                                    "pm.test(\"Create a new cee sheet - test content\", function(){\r",
+                                    "    var jsonData = pm.response.json();\r",
+                                    "    pm.expect(jsonData).to.have.property('@metadata');\r",
+                                    "});"
+                                ],
+                                "type": "text/javascript"
+                            }
+                        }
+                    ],
+                    "id": "ebb9acd9-d6eb-4061-a06f-4b07a428e780",
+                    "protocolProfileBehavior": {
+                        "disableBodyPruning": true
+                    },
+                    "request": {
+                        "auth": {
+                            "type": "apikey",
+                            "apikey": [
+                                {
+                                    "key": "value",
+                                    "value": "{{x-api-key}}",
+                                    "type": "string"
+                                },
+                                {
+                                    "key": "key",
+                                    "value": "x-api-key",
+                                    "type": "string"
+                                },
+                                {
+                                    "key": "in",
+                                    "value": "header",
+                                    "type": "string"
+                                }
+                            ]
+                        },
+                        "method": "POST",
+                        "header": [],
+                        "body": {
+                            "mode": "raw",
+                            "raw": ""
+                        },
+                        "url": {
+                            "raw": "{{http}}://{{url}}/cee/{{version}}",
+                            "protocol": "{{http}}",
+                            "host": [
+                                "{{url}}"
+                            ],
+                            "path": [
+                                "cee",
+                                "{{version}}"
+                            ]
+                        }
+                    },
+                    "response": []
+                },
+                {
+                    "name": "Find a Cee",
+                    "event": [
+                        {
+                            "listen": "test",
+                            "script": {
+                                "id": "004ca30f-6c6f-4ccb-9aed-bcba525d7a09",
+                                "exec": [
+                                    "// Test status\r",
+                                    "pm.test(\"Find a cee sheet - test status\", function(){\r",
+                                    "    pm.response.to.have.status(200);\r",
+                                    "});\r",
+                                    "\r",
+                                    "// Test content\r",
+                                    "pm.test(\"Find a cee sheet - test content\", function(){\r",
+                                    "    var jsonData = pm.response.json();\r",
+                                    "    pm.expect(jsonData).to.have.property('name');\r",
+                                    "    pm.expect(jsonData).to.have.property('version');\r",
+                                    "    pm.expect(jsonData).to.have.property('metadata');\r",
+                                    "});"
+                                ],
+                                "type": "text/javascript"
+                            }
+                        }
+                    ],
+                    "id": "8a192ce8-6d6a-4630-953a-41ed7fcd6806",
+                    "protocolProfileBehavior": {
+                        "disableBodyPruning": true
+                    },
+                    "request": {
+                        "auth": {
+                            "type": "apikey",
+                            "apikey": [
+                                {
+                                    "key": "in",
+                                    "value": "header",
+                                    "type": "string"
+                                },
+                                {
+                                    "key": "value",
+                                    "value": "ZAYTYKDysVa5KyeJDhPk647YifNA7pov5myb9vMr",
+                                    "type": "string"
+                                },
+                                {
+                                    "key": "key",
+                                    "value": "x-api-key",
+                                    "type": "string"
+                                }
+                            ]
+                        },
+                        "method": "GET",
+                        "header": [],
+                        "url": {
+                            "raw": "{{http}}://{{url}}/cee/{{version}}/2020-10/BAR_TH_104",
+                            "protocol": "{{http}}",
+                            "host": [
+                                "{{url}}"
+                            ],
+                            "path": [
+                                "cee",
+                                "{{version}}",
+                                "2020-10",
+                                "BAR_TH_104"
+                            ]
+                        }
+                    },
+                    "response": []
+                },
+                {
+                    "name": "Simulate a Cee",
+                    "event": [
+                        {
+                            "listen": "test",
+                            "script": {
+                                "id": "406a4620-9b35-485a-bcea-a96dca2fdc90",
+                                "exec": [
+                                    "// Test status\r",
+                                    "pm.test(\"Simulate cumac - test status\", function(){\r",
+                                    "    pm.response.to.have.status(200);\r",
+                                    "});\r",
+                                    "\r",
+                                    "// Test content\r",
+                                    "pm.test(\"Simulate cumac - test content\", function(){\r",
+                                    "    var jsonData = pm.response.json();\r",
+                                    "    pm.expect(jsonData).to.have.property('cumac');\r",
+                                    "});"
+                                ],
+                                "type": "text/javascript"
+                            }
+                        }
+                    ],
+                    "id": "fd9430b1-574b-4578-b55d-9c54cc581260",
+                    "protocolProfileBehavior": {
+                        "disableBodyPruning": true
+                    },
+                    "request": {
+                        "auth": {
+                            "type": "apikey",
+                            "apikey": [
+                                {
+                                    "key": "value",
+                                    "value": "{{x-api-key}}",
+                                    "type": "string"
+                                },
+                                {
+                                    "key": "key",
+                                    "value": "x-api-key",
+                                    "type": "string"
+                                },
+                                {
+                                    "key": "in",
+                                    "value": "header",
+                                    "type": "string"
+                                }
+                            ]
+                        },
+                        "method": "POST",
+                        "header": [],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\r\n    \"type_logement\": \"maison\",\r\n    \"efficacite_energetique\": \"112\",\r\n    \"zone_climatique\": \"H2\",\r\n    \"surface_chauffee\": \"80\"\r\n}"
+                        },
+                        "url": {
+                            "raw": "{{http}}://{{url}}/cee/{{version}}/cumac/2020-10/BAR_TH_104",
+                            "protocol": "{{http}}",
+                            "host": [
+                                "{{url}}"
+                            ],
+                            "path": [
+                                "cee",
+                                "{{version}}",
+                                "cumac",
+                                "2020-10",
+                                "BAR_TH_104"
+                            ]
+                        }
+                    },
+                    "response": []
+                },
+                {
+                    "name": "Delete a Cee",
+                    "event": [
+                        {
+                            "listen": "test",
+                            "script": {
+                                "id": "db90172e-dd67-41da-9ee5-ef5abf7d8e3e",
+                                "exec": [
+                                    "// Test status\r",
+                                    "pm.test(\"Delete a cee sheet - test status\", function(){\r",
+                                    "    pm.response.to.have.status(204);\r",
+                                    "});\r",
+                                    ""
+                                ],
+                                "type": "text/javascript"
+                            }
+                        }
+                    ],
+                    "id": "ca285a66-40d7-471a-a180-cb6527d40684",
+                    "protocolProfileBehavior": {
+                        "disableBodyPruning": true
+                    },
+                    "request": {
+                        "auth": {
+                            "type": "apikey",
+                            "apikey": [
+                                {
+                                    "key": "value",
+                                    "value": "{{x-api-key}}",
+                                    "type": "string"
+                                },
+                                {
+                                    "key": "key",
+                                    "value": "x-api-key",
+                                    "type": "string"
+                                },
+                                {
+                                    "key": "in",
+                                    "value": "header",
+                                    "type": "string"
+                                }
+                            ]
+                        },
+                        "method": "DELETE",
+                        "header": [],
+                        "url": {
+                            "raw": "{{http}}://{{url}}/cee/{{version}}/2020-10/BAR_TH_104",
+                            "protocol": "{{http}}",
+                            "host": [
+                                "{{url}}"
+                            ],
+                            "path": [
+                                "cee",
+                                "{{version}}",
+                                "2020-10",
+                                "BAR_TH_104"
+                            ]
+                        }
+                    },
+                    "response": []
+                }
+            ],
+            "id": "9344b363-5e42-4daa-9818-13726366c4dc"
+        },
+        {
+            "name": "Precarity",
+            "item": [
+                {
+                    "name": "Search",
+                    "id": "1477d6e7-ac1c-4fe3-b1c6-734e8130248d",
+                    "protocolProfileBehavior": {
+                        "disableBodyPruning": true
+                    },
+                    "request": {
+                        "auth": {
+                            "type": "apikey",
+                            "apikey": [
+                                {
+                                    "key": "key",
+                                    "value": "x-api-key",
+                                    "type": "string"
+                                },
+                                {
+                                    "key": "value",
+                                    "value": "{{x-api-key}}",
+                                    "type": "string"
+                                },
+                                {
+                                    "key": "in",
+                                    "value": "header",
+                                    "type": "string"
+                                }
+                            ]
+                        },
+                        "method": "POST",
+                        "header": [],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\r\n    \"family\": 4,\r\n    \"postal_code\": \"05390\",\r\n    \"date\": \"2020-03-02\"\r\n}",
+                            "options": {
+                                "raw": {
+                                    "language": "json"
+                                }
+                            }
+                        },
+                        "url": {
+                            "raw": "{{http}}://{{url}}/precarity/{{version}}/search",
+                            "protocol": "{{http}}",
+                            "host": [
+                                "{{url}}"
+                            ],
+                            "path": [
+                                "precarity",
+                                "{{version}}",
+                                "search"
+                            ]
+                        }
+                    },
+                    "response": []
+                },
+                {
+                    "name": "Update",
+                    "id": "3f12447f-3a52-48f1-ad6d-f62544495418",
+                    "protocolProfileBehavior": {
+                        "disableBodyPruning": true
+                    },
+                    "request": {
+                        "auth": {
+                            "type": "apikey",
+                            "apikey": [
+                                {
+                                    "key": "value",
+                                    "value": "{{x-api-key}}",
+                                    "type": "string"
+                                },
+                                {
+                                    "key": "key",
+                                    "value": "x-api-key",
+                                    "type": "string"
+                                },
+                                {
+                                    "key": "in",
+                                    "value": "header",
+                                    "type": "string"
+                                }
+                            ]
+                        },
+                        "method": "PATCH",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "type": "text",
+                                "value": "application/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\r\n    \"localization\": \"idf\",\r\n    \"family\": 1,\r\n    \"high_social_precarity\": 123,\r\n    \"sample_social_precarity\": 1234,\r\n    \"starts_at\": \"2000-01-01\",\r\n    \"ends_at\": \"2018-01-01\"\r\n}"
+                        },
+                        "url": {
+                            "raw": "{{http}}://{{url}}/precarity/{{version}}/{{_id}}",
+                            "protocol": "{{http}}",
+                            "host": [
+                                "{{url}}"
+                            ],
+                            "path": [
+                                "precarity",
+                                "{{version}}",
+                                "{{_id}}"
+                            ]
+                        }
+                    },
+                    "response": []
+                },
+                {
+                    "name": "New",
+                    "event": [
+                        {
+                            "listen": "test",
+                            "script": {
+                                "id": "4f40ecdd-1d3f-4630-9c63-a1cfeb6fcbc6",
+                                "exec": [
+                                    "// Update environment variable \"token\"\r",
+                                    "var jsonData = JSON.parse(responseBody);\r",
+                                    "postman.setEnvironmentVariable(\"_id\", jsonData.$oid);"
+                                ],
+                                "type": "text/javascript"
+                            }
+                        }
+                    ],
+                    "id": "fb0038ed-5f25-4126-bc2a-3372e12c10ce",
+                    "protocolProfileBehavior": {
+                        "disableBodyPruning": true
+                    },
+                    "request": {
+                        "auth": {
+                            "type": "apikey",
+                            "apikey": [
+                                {
+                                    "key": "value",
+                                    "value": "{{x-api-key}}",
+                                    "type": "string"
+                                },
+                                {
+                                    "key": "key",
+                                    "value": "x-api-key",
+                                    "type": "string"
+                                },
+                                {
+                                    "key": "in",
+                                    "value": "header",
+                                    "type": "string"
+                                }
+                            ]
+                        },
+                        "method": "POST",
+                        "header": [],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\r\n    \"_id\": \"4711ef560ba6d7e88b8216e2ee9a0e97\",\r\n    \"localization\": \"idf\",\r\n    \"family\": 1,\r\n    \"high_social_precarity\": 19803,\r\n    \"sample_social_precarity\": 24107,\r\n    \"starts_at\": \"2000-01-01\",\r\n    \"ends_at\": \"2018-01-01\"\r\n}"
+                        },
+                        "url": {
+                            "raw": "{{http}}://{{url}}/precarity/{{version}}",
+                            "protocol": "{{http}}",
+                            "host": [
+                                "{{url}}"
+                            ],
+                            "path": [
+                                "precarity",
+                                "{{version}}"
+                            ]
+                        }
+                    },
+                    "response": []
+                },
+                {
+                    "name": "Find",
+                    "event": [
+                        {
+                            "listen": "test",
+                            "script": {
+                                "id": "fac9c738-a314-4755-9dc6-f3c5f1ce6006",
+                                "exec": [
+                                    "// Test status\r",
+                                    "pm.test(\"Find a cee sheet - test status\", function(){\r",
+                                    "    pm.response.to.have.status(200);\r",
+                                    "});\r",
+                                    "\r",
+                                    "// Test content\r",
+                                    "pm.test(\"Find a cee sheet - test content\", function(){\r",
+                                    "    var jsonData = pm.response.json();\r",
+                                    "    pm.expect(jsonData).to.have.property('name');\r",
+                                    "    pm.expect(jsonData).to.have.property('version');\r",
+                                    "    pm.expect(jsonData).to.have.property('metadata');\r",
+                                    "});"
+                                ],
+                                "type": "text/javascript"
+                            }
+                        }
+                    ],
+                    "id": "9f73bff6-c938-4079-9252-e6e71625455e",
+                    "protocolProfileBehavior": {
+                        "disableBodyPruning": true
+                    },
+                    "request": {
+                        "auth": {
+                            "type": "apikey",
+                            "apikey": [
+                                {
+                                    "key": "value",
+                                    "value": "{{x-api-key}}",
+                                    "type": "string"
+                                },
+                                {
+                                    "key": "key",
+                                    "value": "x-api-key",
+                                    "type": "string"
+                                },
+                                {
+                                    "key": "in",
+                                    "value": "header",
+                                    "type": "string"
+                                }
+                            ]
+                        },
+                        "method": "GET",
+                        "header": [],
+                        "url": {
+                            "raw": "{{http}}://{{url}}/precarity/{{version}}/{{_id}}",
+                            "protocol": "{{http}}",
+                            "host": [
+                                "{{url}}"
+                            ],
+                            "path": [
+                                "precarity",
+                                "{{version}}",
+                                "{{_id}}"
+                            ]
+                        }
+                    },
+                    "response": []
+                },
+                {
+                    "name": "Delete",
+                    "event": [
+                        {
+                            "listen": "test",
+                            "script": {
+                                "id": "3d38266d-2d58-4114-9e49-8f10e09f68ca",
+                                "exec": [
+                                    "// Test status\r",
+                                    "pm.test(\"Delete a cee sheet - test status\", function(){\r",
+                                    "    pm.response.to.have.status(204);\r",
+                                    "});\r",
+                                    ""
+                                ],
+                                "type": "text/javascript"
+                            }
+                        }
+                    ],
+                    "id": "ba8bd33c-1e00-4959-9312-06c717a43fd7",
+                    "protocolProfileBehavior": {
+                        "disableBodyPruning": true
+                    },
+                    "request": {
+                        "auth": {
+                            "type": "apikey",
+                            "apikey": [
+                                {
+                                    "key": "value",
+                                    "value": "{{x-api-key}}",
+                                    "type": "string"
+                                },
+                                {
+                                    "key": "key",
+                                    "value": "x-api-key",
+                                    "type": "string"
+                                },
+                                {
+                                    "key": "in",
+                                    "value": "header",
+                                    "type": "string"
+                                }
+                            ]
+                        },
+                        "method": "DELETE",
+                        "header": [],
+                        "url": {
+                            "raw": "{{http}}://{{url}}/precarity/{{version}}/{{_id}}",
+                            "protocol": "{{http}}",
+                            "host": [
+                                "{{url}}"
+                            ],
+                            "path": [
+                                "precarity",
+                                "{{version}}",
+                                "{{_id}}"
+                            ]
+                        }
+                    },
+                    "response": []
+                }
+            ],
+            "id": "db25c34b-67f2-4748-83ae-bdb6941b2cd5"
+        },
+        {
+            "name": "Profiles",
+            "item": [
+                {
+                    "name": "Search",
+                    "id": "2f9decdc-0baa-4dd9-af1f-ef48e115b95a",
+                    "protocolProfileBehavior": {
+                        "disableBodyPruning": true
+                    },
+                    "request": {
+                        "auth": {
+                            "type": "apikey",
+                            "apikey": [
+                                {
+                                    "key": "value",
+                                    "value": "{{x-api-key}}",
+                                    "type": "string"
+                                },
+                                {
+                                    "key": "key",
+                                    "value": "x-api-key",
+                                    "type": "string"
+                                },
+                                {
+                                    "key": "in",
+                                    "value": "header",
+                                    "type": "string"
+                                }
+                            ]
+                        },
+                        "method": "POST",
+                        "header": [],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\r\n    \"family\": 4,\r\n    \"postal_code\": \"05390\",\r\n    \"date\": \"2020-03-02\"\r\n}",
+                            "options": {
+                                "raw": {
+                                    "language": "json"
+                                }
+                            }
+                        },
+                        "url": {
+                            "raw": "{{http}}://{{url}}/profiles/{{version}}/search",
+                            "protocol": "{{http}}",
+                            "host": [
+                                "{{url}}"
+                            ],
+                            "path": [
+                                "profiles",
+                                "{{version}}",
+                                "search"
+                            ]
+                        }
+                    },
+                    "response": []
+                },
+                {
+                    "name": "Update",
+                    "id": "6587ebc3-f439-4793-8b63-d33dc3710df5",
+                    "protocolProfileBehavior": {
+                        "disableBodyPruning": true
+                    },
+                    "request": {
+                        "auth": {
+                            "type": "apikey",
+                            "apikey": [
+                                {
+                                    "key": "value",
+                                    "value": "{{x-api-key}}",
+                                    "type": "string"
+                                },
+                                {
+                                    "key": "key",
+                                    "value": "x-api-key",
+                                    "type": "string"
+                                },
+                                {
+                                    "key": "in",
+                                    "value": "header",
+                                    "type": "string"
+                                }
+                            ]
+                        },
+                        "method": "PATCH",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "type": "text",
+                                "value": "application/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\r\n    \"localization\": \"idf\",\r\n    \"family\": 1,\r\n    \"high_social_precarity\": 123,\r\n    \"sample_social_precarity\": 1234,\r\n    \"starts_at\": \"2000-01-01\",\r\n    \"ends_at\": \"2018-01-01\"\r\n}"
+                        },
+                        "url": {
+                            "raw": "{{http}}://{{url}}/profiles/{{version}}/{{_id}}",
+                            "protocol": "{{http}}",
+                            "host": [
+                                "{{url}}"
+                            ],
+                            "path": [
+                                "profiles",
+                                "{{version}}",
+                                "{{_id}}"
+                            ]
+                        }
+                    },
+                    "response": []
+                },
+                {
+                    "name": "New",
+                    "event": [
+                        {
+                            "listen": "test",
+                            "script": {
+                                "id": "32855c17-e611-4161-9f3a-3e1723468f02",
+                                "exec": [
+                                    "// Update environment variable \"token\"\r",
+                                    "var jsonData = JSON.parse(responseBody);\r",
+                                    "postman.setEnvironmentVariable(\"_id\", jsonData.$oid);"
+                                ],
+                                "type": "text/javascript"
+                            }
+                        }
+                    ],
+                    "id": "27718b89-9c4d-4f9a-b941-341048c19eec",
+                    "protocolProfileBehavior": {
+                        "disableBodyPruning": true
+                    },
+                    "request": {
+                        "auth": {
+                            "type": "apikey",
+                            "apikey": [
+                                {
+                                    "key": "value",
+                                    "value": "{{x-api-key}}",
+                                    "type": "string"
+                                },
+                                {
+                                    "key": "key",
+                                    "value": "x-api-key",
+                                    "type": "string"
+                                },
+                                {
+                                    "key": "in",
+                                    "value": "header",
+                                    "type": "string"
+                                }
+                            ]
+                        },
+                        "method": "POST",
+                        "header": [],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\r\n    \"_id\": \"4711ef560ba6d7e88b8216e2ee9a0e97\",\r\n    \"localization\": \"idf\",\r\n    \"family\": 1,\r\n    \"high_social_precarity\": 19803,\r\n    \"sample_social_precarity\": 24107,\r\n    \"starts_at\": \"2000-01-01\",\r\n    \"ends_at\": \"2018-01-01\"\r\n}"
+                        },
+                        "url": {
+                            "raw": "{{http}}://{{url}}/profiles/{{version}}",
+                            "protocol": "{{http}}",
+                            "host": [
+                                "{{url}}"
+                            ],
+                            "path": [
+                                "profiles",
+                                "{{version}}"
+                            ]
+                        }
+                    },
+                    "response": []
+                },
+                {
+                    "name": "Find",
+                    "event": [
+                        {
+                            "listen": "test",
+                            "script": {
+                                "id": "34b85db8-63c9-4893-b05b-0d6d3c80f009",
+                                "exec": [
+                                    "// Test status\r",
+                                    "pm.test(\"Find a cee sheet - test status\", function(){\r",
+                                    "    pm.response.to.have.status(200);\r",
+                                    "});\r",
+                                    "\r",
+                                    "// Test content\r",
+                                    "pm.test(\"Find a cee sheet - test content\", function(){\r",
+                                    "    var jsonData = pm.response.json();\r",
+                                    "    pm.expect(jsonData).to.have.property('name');\r",
+                                    "    pm.expect(jsonData).to.have.property('version');\r",
+                                    "    pm.expect(jsonData).to.have.property('metadata');\r",
+                                    "});"
+                                ],
+                                "type": "text/javascript"
+                            }
+                        }
+                    ],
+                    "id": "6e435923-10a7-450d-8b24-6bd830e7e8d1",
+                    "protocolProfileBehavior": {
+                        "disableBodyPruning": true
+                    },
+                    "request": {
+                        "auth": {
+                            "type": "apikey",
+                            "apikey": [
+                                {
+                                    "key": "value",
+                                    "value": "{{x-api-key}}",
+                                    "type": "string"
+                                },
+                                {
+                                    "key": "key",
+                                    "value": "x-api-key",
+                                    "type": "string"
+                                },
+                                {
+                                    "key": "in",
+                                    "value": "header",
+                                    "type": "string"
+                                }
+                            ]
+                        },
+                        "method": "GET",
+                        "header": [],
+                        "url": {
+                            "raw": "{{http}}://{{url}}/profiles/{{version}}/{{_id}}",
+                            "protocol": "{{http}}",
+                            "host": [
+                                "{{url}}"
+                            ],
+                            "path": [
+                                "profiles",
+                                "{{version}}",
+                                "{{_id}}"
+                            ]
+                        }
+                    },
+                    "response": []
+                },
+                {
+                    "name": "Delete",
+                    "event": [
+                        {
+                            "listen": "test",
+                            "script": {
+                                "id": "582821be-f134-4bcd-9be2-045d651a7bbe",
+                                "exec": [
+                                    "// Test status\r",
+                                    "pm.test(\"Delete a cee sheet - test status\", function(){\r",
+                                    "    pm.response.to.have.status(204);\r",
+                                    "});\r",
+                                    ""
+                                ],
+                                "type": "text/javascript"
+                            }
+                        }
+                    ],
+                    "id": "4ae246dc-7521-40cc-82a6-11db239cef95",
+                    "protocolProfileBehavior": {
+                        "disableBodyPruning": true
+                    },
+                    "request": {
+                        "auth": {
+                            "type": "apikey",
+                            "apikey": [
+                                {
+                                    "key": "value",
+                                    "value": "{{x-api-key}}",
+                                    "type": "string"
+                                },
+                                {
+                                    "key": "key",
+                                    "value": "x-api-key",
+                                    "type": "string"
+                                },
+                                {
+                                    "key": "in",
+                                    "value": "header",
+                                    "type": "string"
+                                }
+                            ]
+                        },
+                        "method": "DELETE",
+                        "header": [],
+                        "url": {
+                            "raw": "{{http}}://{{url}}/profiles/{{version}}/{{_id}}",
+                            "protocol": "{{http}}",
+                            "host": [
+                                "{{url}}"
+                            ],
+                            "path": [
+                                "profiles",
+                                "{{version}}",
+                                "{{_id}}"
+                            ]
+                        }
+                    },
+                    "response": []
+                }
+            ],
+            "id": "874cab3d-b413-4182-90a7-73ec75244801"
+        },
+        {
+            "name": "Offers",
+            "item": [
+                {
+                    "name": "New Offer",
+                    "event": [
+                        {
+                            "listen": "test",
+                            "script": {
+                                "id": "a169a46e-4404-4e43-bf92-a2bd6c0ae045",
+                                "exec": [
+                                    ""
+                                ],
+                                "type": "text/javascript"
+                            }
+                        }
+                    ],
+                    "id": "c4069a44-7a46-4fca-af21-7dab324b459b",
+                    "protocolProfileBehavior": {
+                        "disableBodyPruning": true
+                    },
+                    "request": {
+                        "auth": {
+                            "type": "apikey",
+                            "apikey": [
+                                {
+                                    "key": "value",
+                                    "value": "{{x-api-key}}",
+                                    "type": "string"
+                                },
+                                {
+                                    "key": "key",
+                                    "value": "x-api-key",
+                                    "type": "string"
+                                },
+                                {
+                                    "key": "in",
+                                    "value": "header",
+                                    "type": "string"
+                                }
+                            ]
+                        },
+                        "method": "POST",
+                        "header": [],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\r\n    \"code\": \"new_promo_1\",\r\n    \"exclusive\": true,\r\n    \"name\": \"Offre CDP EHS 2019-09-01 ['BAR_TH_104']\",\r\n    \"starts_at\": \"2019-09-01\",  \r\n    \"priority\": 1,\r\n    \"filters\": {\r\n        \"cdp\": {\r\n            \"val\": true\r\n        },        \r\n        \"organizations\": {\r\n            \"val\": [\"63\", \"102\"]\r\n        },\r\n        \"cee\": {\r\n            \"val\": [\"BAR_TH_104\"]\r\n        }\r\n    },\r\n    \"actions\": {\r\n        \"standard\": {\r\n            \"field2\": \"prime\",\r\n            \"type\": \"percentage\",\r\n            \"val\": \"5.500550055\"\r\n        },\r\n        \"precaire\": {\r\n            \"field\": \"prime\",\r\n            \"type\": \"percentage\",\r\n            \"val\": \"5.499793758\"\r\n        },\r\n        \"grand_precaire\": {\r\n            \"field\": \"prime\",\r\n            \"type\": \"percentage\",\r\n            \"val\": \"5.499793758\"\r\n        },\r\n        \"business_bringer\": {\r\n            \"field\": \"prime\",\r\n            \"type\": \"percentage\",\r\n            \"val\": \"0\"\r\n        }\r\n    }\r\n}\r\n"
+                        },
+                        "url": {
+                            "raw": "{{http}}://{{url}}/offers/{{version}}",
+                            "protocol": "{{http}}",
+                            "host": [
+                                "{{url}}"
+                            ],
+                            "path": [
+                                "offers",
+                                "{{version}}"
+                            ]
+                        }
+                    },
+                    "response": []
+                },
+                {
+                    "name": "Apply Offer",
+                    "event": [
+                        {
+                            "listen": "test",
+                            "script": {
+                                "id": "9e8d464a-480c-4e9b-9f23-9c4921530e4b",
+                                "exec": [
+                                    ""
+                                ],
+                                "type": "text/javascript"
+                            }
+                        }
+                    ],
+                    "id": "d49bab96-2b68-4623-9dce-c26929e869a2",
+                    "protocolProfileBehavior": {
+                        "disableBodyPruning": true
+                    },
+                    "request": {
+                        "auth": {
+                            "type": "apikey",
+                            "apikey": [
+                                {
+                                    "key": "value",
+                                    "value": "{{x-api-key}}",
+                                    "type": "string"
+                                },
+                                {
+                                    "key": "key",
+                                    "value": "x-api-key",
+                                    "type": "string"
+                                },
+                                {
+                                    "key": "in",
+                                    "value": "header",
+                                    "type": "string"
+                                }
+                            ]
+                        },
+                        "method": "POST",
+                        "header": [],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\r\n    \"amount\": 4,\r\n    \"organization\": \"9716fd29b4be1666f93018a1ca868b2f\",\r\n    \"cee\": \"BAR_TH_104\",\r\n    \"cdp\": true,\r\n    \"revenue\": \"REVENUS_STANDARD\",\r\n    \"date\": \"2020-01-22\"\r\n}\r\n"
+                        },
+                        "url": {
+                            "raw": "{{http}}://{{url}}/offers/{{version}}/search",
+                            "protocol": "{{http}}",
+                            "host": [
+                                "{{url}}"
+                            ],
+                            "path": [
+                                "offers",
+                                "{{version}}",
+                                "search"
+                            ]
+                        },
+                        "description": "Apply offer if exists otherwise return null"
+                    },
+                    "response": []
+                },
+                {
+                    "name": "Find an Offer",
+                    "event": [
+                        {
+                            "listen": "test",
+                            "script": {
+                                "id": "a51778cc-aa90-4c23-a8f9-4a04f52d8f86",
+                                "exec": [
+                                    "// Test status\r",
+                                    "pm.test(\"Find a cee sheet - test status\", function(){\r",
+                                    "    pm.response.to.have.status(200);\r",
+                                    "});\r",
+                                    "\r",
+                                    "// Test content\r",
+                                    "pm.test(\"Find a cee sheet - test content\", function(){\r",
+                                    "    var jsonData = pm.response.json();\r",
+                                    "    pm.expect(jsonData).to.have.property('name');\r",
+                                    "    pm.expect(jsonData).to.have.property('version');\r",
+                                    "    pm.expect(jsonData).to.have.property('metadata');\r",
+                                    "});"
+                                ],
+                                "type": "text/javascript"
+                            }
+                        }
+                    ],
+                    "id": "55a9818c-1837-4da7-8a1a-25874eb128e1",
+                    "protocolProfileBehavior": {
+                        "disableBodyPruning": true
+                    },
+                    "request": {
+                        "auth": {
+                            "type": "apikey",
+                            "apikey": [
+                                {
+                                    "key": "value",
+                                    "value": "{{x-api-key}}",
+                                    "type": "string"
+                                },
+                                {
+                                    "key": "key",
+                                    "value": "x-api-key",
+                                    "type": "string"
+                                },
+                                {
+                                    "key": "in",
+                                    "value": "header",
+                                    "type": "string"
+                                }
+                            ]
+                        },
+                        "method": "GET",
+                        "header": [],
+                        "url": {
+                            "raw": "{{http}}://{{url}}/offers/{{version}}/offers_180",
+                            "protocol": "{{http}}",
+                            "host": [
+                                "{{url}}"
+                            ],
+                            "path": [
+                                "offers",
+                                "{{version}}",
+                                "offers_180"
+                            ]
+                        }
+                    },
+                    "response": []
+                },
+                {
+                    "name": "Delete an Offer",
+                    "event": [
+                        {
+                            "listen": "test",
+                            "script": {
+                                "id": "dd4a8151-fb28-4e79-81c6-1df6ee4b46a8",
+                                "exec": [
+                                    "// Test status\r",
+                                    "pm.test(\"Delete a cee sheet - test status\", function(){\r",
+                                    "    pm.response.to.have.status(204);\r",
+                                    "});\r",
+                                    ""
+                                ],
+                                "type": "text/javascript"
+                            }
+                        }
+                    ],
+                    "id": "c1e0a867-4598-4548-8c7b-0d1466836b43",
+                    "protocolProfileBehavior": {
+                        "disableBodyPruning": true
+                    },
+                    "request": {
+                        "auth": {
+                            "type": "apikey",
+                            "apikey": [
+                                {
+                                    "key": "value",
+                                    "value": "{{x-api-key}}",
+                                    "type": "string"
+                                },
+                                {
+                                    "key": "key",
+                                    "value": "x-api-key",
+                                    "type": "string"
+                                },
+                                {
+                                    "key": "in",
+                                    "value": "header",
+                                    "type": "string"
+                                }
+                            ]
+                        },
+                        "method": "DELETE",
+                        "header": [],
+                        "url": {
+                            "raw": "{{http}}://{{url}}/offers/{{version}}/new_promo_1",
+                            "protocol": "{{http}}",
+                            "host": [
+                                "{{url}}"
+                            ],
+                            "path": [
+                                "offers",
+                                "{{version}}",
+                                "new_promo_1"
+                            ]
+                        }
+                    },
+                    "response": []
+                }
+            ],
+            "id": "c307cc6d-616a-4e7d-86ea-5151ea005d3c"
+        },
+        {
+            "name": "Os",
+            "item": [
+                {
+                    "name": "New Os",
+                    "event": [
+                        {
+                            "listen": "test",
+                            "script": {
+                                "id": "d06b5105-91fc-4849-9b1d-73adaf544af5",
+                                "exec": [
+                                    "// Update environment variable \"token\"\r",
+                                    "var jsonData = JSON.parse(responseBody);\r",
+                                    "postman.setEnvironmentVariable(\"_id\", jsonData.$oid);"
+                                ],
+                                "type": "text/javascript"
+                            }
+                        }
+                    ],
+                    "id": "4995bb90-af10-461b-968d-ccb4eaa93d85",
+                    "protocolProfileBehavior": {
+                        "disableBodyPruning": true
+                    },
+                    "request": {
+                        "auth": {
+                            "type": "apikey",
+                            "apikey": [
+                                {
+                                    "key": "value",
+                                    "value": "{{x-api-key}}",
+                                    "type": "string"
+                                },
+                                {
+                                    "key": "key",
+                                    "value": "x-api-key",
+                                    "type": "string"
+                                },
+                                {
+                                    "key": "in",
+                                    "value": "header",
+                                    "type": "string"
+                                }
+                            ]
+                        },
+                        "method": "POST",
+                        "header": [],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\r\n    \"group_id\": \"{{_group_id}}\",\r\n    \"date\": \"2020-11-02\",\r\n    \"user\": \"b4573b0d-b471-428f-a326-f9de9cbd2c5f\",\r\n    \"boost\": false,\r\n    \"organization\": \"82b34a350da862469cb6037c31a28075\",\r\n    \"bank\": {\r\n        \"type\": \"bank\",\r\n        \"bank\": {\r\n            \"montant_pret_bonifie\": \"\",\r\n            \"taux_effectif_credit\": \"\",\r\n            \"montant_bonification\": \"\",\r\n            \"banque\": \"\"\r\n        }\r\n    },\r\n    \"cee\": {\r\n        \"id\": \"6059f6babf4d2c8d1c121ca6\",\r\n        \"name\": \"BAR_EN_101\",\r\n        \"attributes\": {\r\n            \"zone\": \"H1\",\r\n            \"surface\": \"20\"\r\n        }\r\n    },\r\n    \"chantier\": {\r\n        \"property_type\": \"apartment\",\r\n        \"gt_2years\": \"true\",\r\n        \"energy\":  \"electrique\",\r\n        \"address\": \"12 Rue Volney, Paris, France\",\r\n        \"city\": \"Paris\",\r\n        \"postal_code\": \"75005\",\r\n        \"owner\": \"false\"\r\n    },\r\n    \"beneficiaire\": {\r\n        \"gender\": \"M\",\r\n        \"lastname\": \"biden\",\r\n        \"firstname\": \"joe\",\r\n        \"address\": \"22 rue du débarcadère\",\r\n        \"city\": \"Paris\",\r\n        \"postal_code\": \"75017\",\r\n        \"family\": \"4\",\r\n        \"email\": \"username@gmail.com\",\r\n        \"phone\": \"(+33)6.00.00.00.00\"\r\n    },\r\n    \"precarity\": {\r\n        \"type\": \"REVENUS_STANDARD\",\r\n        \"tax_reference\": \"\",\r\n        \"number_reference\": \"\"\r\n    }\r\n}\r\n"
+                        },
+                        "url": {
+                            "raw": "{{http}}://{{url}}/os",
+                            "protocol": "{{http}}",
+                            "host": [
+                                "{{url}}"
+                            ],
+                            "path": [
+                                "os"
+                            ]
+                        }
+                    },
+                    "response": []
+                },
+                {
+                    "name": "Find an Os",
+                    "event": [
+                        {
+                            "listen": "test",
+                            "script": {
+                                "id": "32b2f33c-ed4c-4544-94a4-761322e66cd1",
+                                "exec": [
+                                    ""
+                                ],
+                                "type": "text/javascript"
+                            }
+                        }
+                    ],
+                    "id": "f2d654af-413e-494e-85ec-a1448629a8b3",
+                    "protocolProfileBehavior": {
+                        "disableBodyPruning": true
+                    },
+                    "request": {
+                        "auth": {
+                            "type": "apikey",
+                            "apikey": [
+                                {
+                                    "key": "value",
+                                    "value": "{{x-api-key}}",
+                                    "type": "string"
+                                },
+                                {
+                                    "key": "key",
+                                    "value": "x-api-key",
+                                    "type": "string"
+                                },
+                                {
+                                    "key": "in",
+                                    "value": "header",
+                                    "type": "string"
+                                }
+                            ]
+                        },
+                        "method": "GET",
+                        "header": [],
+                        "url": {
+                            "raw": "{{http}}://{{url}}/os/{{version}}/{{_id}}",
+                            "protocol": "{{http}}",
+                            "host": [
+                                "{{url}}"
+                            ],
+                            "path": [
+                                "os",
+                                "{{version}}",
+                                "{{_id}}"
+                            ]
+                        }
+                    },
+                    "response": []
+                },
+                {
+                    "name": "Find all Os by Project Id",
+                    "event": [
+                        {
+                            "listen": "test",
+                            "script": {
+                                "id": "9524f2ae-7aec-44af-b007-ce7df9c15d89",
+                                "exec": [
+                                    ""
+                                ],
+                                "type": "text/javascript"
+                            }
+                        }
+                    ],
+                    "id": "707fe4d9-fad7-4c2e-8f50-6f89b7f93792",
+                    "protocolProfileBehavior": {
+                        "disableBodyPruning": true
+                    },
+                    "request": {
+                        "auth": {
+                            "type": "apikey",
+                            "apikey": [
+                                {
+                                    "key": "value",
+                                    "value": "{{x-api-key}}",
+                                    "type": "string"
+                                },
+                                {
+                                    "key": "key",
+                                    "value": "x-api-key",
+                                    "type": "string"
+                                },
+                                {
+                                    "key": "in",
+                                    "value": "header",
+                                    "type": "string"
+                                }
+                            ]
+                        },
+                        "method": "GET",
+                        "header": [],
+                        "url": {
+                            "raw": "{{http}}://{{url}}/os/{{version}}/group/{{_group_id}}",
+                            "protocol": "{{http}}",
+                            "host": [
+                                "{{url}}"
+                            ],
+                            "path": [
+                                "os",
+                                "{{version}}",
+                                "group",
+                                "{{_group_id}}"
+                            ]
+                        }
+                    },
+                    "response": []
+                },
+                {
+                    "name": "Delete an Os",
+                    "event": [
+                        {
+                            "listen": "test",
+                            "script": {
+                                "id": "c097b9cb-2220-4ed0-8591-dcad754117e0",
+                                "exec": [
+                                    ""
+                                ],
+                                "type": "text/javascript"
+                            }
+                        }
+                    ],
+                    "id": "35523ca3-4085-4de4-b564-e4b261117eef",
+                    "protocolProfileBehavior": {
+                        "disableBodyPruning": true
+                    },
+                    "request": {
+                        "auth": {
+                            "type": "apikey",
+                            "apikey": [
+                                {
+                                    "key": "value",
+                                    "value": "{{x-api-key}}",
+                                    "type": "string"
+                                },
+                                {
+                                    "key": "key",
+                                    "value": "x-api-key",
+                                    "type": "string"
+                                },
+                                {
+                                    "key": "in",
+                                    "value": "header",
+                                    "type": "string"
+                                }
+                            ]
+                        },
+                        "method": "DELETE",
+                        "header": [],
+                        "url": {
+                            "raw": "{{http}}://{{url}}/os/{{version}}/{{_id}}",
+                            "protocol": "{{http}}",
+                            "host": [
+                                "{{url}}"
+                            ],
+                            "path": [
+                                "os",
+                                "{{version}}",
+                                "{{_id}}"
+                            ]
+                        }
+                    },
+                    "response": []
+                },
+                {
+                    "name": "Get project id",
+                    "event": [
+                        {
+                            "listen": "test",
+                            "script": {
+                                "id": "c5946ba3-1fde-40ba-bb8b-d098a670eaa9",
+                                "exec": [
+                                    "// Update environment variable \"token\"\r",
+                                    "var jsonData = JSON.parse(responseBody);\r",
+                                    "postman.setEnvironmentVariable(\"_group_id\", jsonData._group_id);"
+                                ],
+                                "type": "text/javascript"
+                            }
+                        }
+                    ],
+                    "id": "050656e4-50ba-4bc6-8b50-c0755e91134c",
+                    "protocolProfileBehavior": {
+                        "disableBodyPruning": true
+                    },
+                    "request": {
+                        "auth": {
+                            "type": "apikey",
+                            "apikey": [
+                                {
+                                    "key": "value",
+                                    "value": "{{x-api-key}}",
+                                    "type": "string"
+                                },
+                                {
+                                    "key": "key",
+                                    "value": "x-api-key",
+                                    "type": "string"
+                                },
+                                {
+                                    "key": "in",
+                                    "value": "header",
+                                    "type": "string"
+                                }
+                            ]
+                        },
+                        "method": "POST",
+                        "header": [],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\r\n    \"date\": \"2020-11-02\",\r\n}\r\n"
+                        },
+                        "url": {
+                            "raw": "{{http}}://{{url}}/os/{{version}}/group",
+                            "protocol": "{{http}}",
+                            "host": [
+                                "{{url}}"
+                            ],
+                            "path": [
+                                "os",
+                                "{{version}}",
+                                "group"
+                            ]
+                        }
+                    },
+                    "response": []
+                }
+            ],
+            "id": "c962afce-7209-4bf8-8793-b5e82bb7ff9f"
+        },
+        {
+            "name": "Organizations",
+            "item": [
+                {
+                    "name": "New Organization",
+                    "id": "590b05de-7ff3-4e19-9757-25cc7083945b",
+                    "protocolProfileBehavior": {
+                        "disableBodyPruning": true
+                    },
+                    "request": {
+                        "auth": {
+                            "type": "apikey",
+                            "apikey": [
+                                {
+                                    "key": "value",
+                                    "value": "{{x-api-key}}",
+                                    "type": "string"
+                                },
+                                {
+                                    "key": "key",
+                                    "value": "x-api-key",
+                                    "type": "string"
+                                },
+                                {
+                                    "key": "in",
+                                    "value": "header",
+                                    "type": "string"
+                                }
+                            ]
+                        },
+                        "method": "POST",
+                        "header": [],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\r\n   \"_id\":\"1234\",\r\n   \"parent\":\"01617087aa2e35d88370540dac589236\",\r\n   \"precarity\":{\r\n      \"standard\":\"4.0\",\r\n      \"high_social_precarity\":\"4.0\",\r\n      \"sample_social_precarity\":\"4.0\"\r\n   },\r\n   \"name\":\"AGENCE_ARLES\",\r\n   \"siret\":\"30134058405862\",\r\n   \"email\":\"arles.homeservices@engie.com\",\r\n   \"address\":{\r\n      \"zipcode\":\"44ba6359c347c4e1eeba566cf5e6423a\",\r\n      \"city\":\"\",\r\n      \"street\":\"false\"\r\n   },\r\n   \"type\":\"AGENCE\",\r\n   \"title\":\"ENGIE HOME SERVICES ARLES\",\r\n   \"phone\":\"0490914527\"\r\n}",
+                            "options": {
+                                "raw": {
+                                    "language": "json"
+                                }
+                            }
+                        },
+                        "url": {
+                            "raw": "{{http}}://{{url}}/organizations/{{version}}",
+                            "protocol": "{{http}}",
+                            "host": [
+                                "{{url}}"
+                            ],
+                            "path": [
+                                "organizations",
+                                "{{version}}"
+                            ]
+                        }
+                    },
+                    "response": []
+                },
+                {
+                    "name": "Find an Organization",
+                    "id": "46c05a3b-fa22-4c58-a2c1-2477a2dc9891",
+                    "protocolProfileBehavior": {
+                        "disableBodyPruning": true
+                    },
+                    "request": {
+                        "auth": {
+                            "type": "apikey",
+                            "apikey": [
+                                {
+                                    "key": "value",
+                                    "value": "{{x-api-key}}",
+                                    "type": "string"
+                                },
+                                {
+                                    "key": "key",
+                                    "value": "x-api-key",
+                                    "type": "string"
+                                },
+                                {
+                                    "key": "in",
+                                    "value": "header",
+                                    "type": "string"
+                                }
+                            ]
+                        },
+                        "method": "GET",
+                        "header": [],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "",
+                            "options": {
+                                "raw": {
+                                    "language": "json"
+                                }
+                            }
+                        },
+                        "url": {
+                            "raw": "{{http}}://{{url}}/organizations/{{version}}/1234",
+                            "protocol": "{{http}}",
+                            "host": [
+                                "{{url}}"
+                            ],
+                            "path": [
+                                "organizations",
+                                "{{version}}",
+                                "1234"
+                            ]
+                        }
+                    },
+                    "response": []
+                },
+                {
+                    "name": "Delete an Organization",
+                    "id": "b6b72bf8-de60-43c7-b0c5-38d900019ad2",
+                    "protocolProfileBehavior": {
+                        "disableBodyPruning": true
+                    },
+                    "request": {
+                        "auth": {
+                            "type": "apikey",
+                            "apikey": [
+                                {
+                                    "key": "value",
+                                    "value": "{{x-api-key}}",
+                                    "type": "string"
+                                },
+                                {
+                                    "key": "key",
+                                    "value": "x-api-key",
+                                    "type": "string"
+                                },
+                                {
+                                    "key": "in",
+                                    "value": "header",
+                                    "type": "string"
+                                }
+                            ]
+                        },
+                        "method": "DELETE",
+                        "header": [],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "",
+                            "options": {
+                                "raw": {
+                                    "language": "json"
+                                }
+                            }
+                        },
+                        "url": {
+                            "raw": "{{http}}://{{url}}/organizations/{{version}}/{{_id}}",
+                            "protocol": "{{http}}",
+                            "host": [
+                                "{{url}}"
+                            ],
+                            "path": [
+                                "organizations",
+                                "{{version}}",
+                                "{{_id}}"
+                            ]
+                        }
+                    },
+                    "response": []
+                },
+                {
+                    "name": "Update an Organization",
+                    "id": "ad9e014d-c73b-4cf0-a216-e8ea9856c7d6",
+                    "protocolProfileBehavior": {
+                        "disableBodyPruning": true
+                    },
+                    "request": {
+                        "auth": {
+                            "type": "apikey",
+                            "apikey": [
+                                {
+                                    "key": "value",
+                                    "value": "{{x-api-key}}",
+                                    "type": "string"
+                                },
+                                {
+                                    "key": "key",
+                                    "value": "x-api-key",
+                                    "type": "string"
+                                },
+                                {
+                                    "key": "in",
+                                    "value": "header",
+                                    "type": "string"
+                                }
+                            ]
+                        },
+                        "method": "PATCH",
+                        "header": [],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\r\n   \"_id\":\"1234\",\r\n   \"parent\":\"01617087aa2e35d88370540dac589236\",\r\n   \"precarity\":{\r\n      \"standard\":\"4.0\",\r\n      \"high_social_precarity\":\"4.0\",\r\n      \"sample_social_precarity\":\"4.0\"\r\n   },\r\n   \"name\":\"AGENCE_ARLES\",\r\n   \"siret\":\"30134058405862\",\r\n   \"email\":\"arles.homeservices@engie.com\",\r\n   \"address\":{\r\n      \"zipcode\":\"44ba6359c347c4e1eeba566cf5e6423a\",\r\n      \"city\":\"\",\r\n      \"street\":\"false\"\r\n   },\r\n   \"type\":\"AGENCE\",\r\n   \"title\":\"ENGIE HOME SERVICES ARLES\",\r\n   \"phone\":\"000000490914527\"\r\n}",
+                            "options": {
+                                "raw": {
+                                    "language": "json"
+                                }
+                            }
+                        },
+                        "url": {
+                            "raw": "{{http}}://{{url}}/organizations/{{version}}/{{_id}}",
+                            "protocol": "{{http}}",
+                            "host": [
+                                "{{url}}"
+                            ],
+                            "path": [
+                                "organizations",
+                                "{{version}}",
+                                "{{_id}}"
+                            ]
+                        }
+                    },
+                    "response": []
+                },
+                {
+                    "name": "Find a Parents",
+                    "id": "e46f327a-3d47-4f3e-8566-de09b3c6316e",
+                    "protocolProfileBehavior": {
+                        "disableBodyPruning": true
+                    },
+                    "request": {
+                        "auth": {
+                            "type": "apikey",
+                            "apikey": [
+                                {
+                                    "key": "value",
+                                    "value": "{{x-api-key}}",
+                                    "type": "string"
+                                },
+                                {
+                                    "key": "key",
+                                    "value": "x-api-key",
+                                    "type": "string"
+                                },
+                                {
+                                    "key": "in",
+                                    "value": "header",
+                                    "type": "string"
+                                }
+                            ]
+                        },
+                        "method": "GET",
+                        "header": [],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "",
+                            "options": {
+                                "raw": {
+                                    "language": "json"
+                                }
+                            }
+                        },
+                        "url": {
+                            "raw": "{{http}}://{{url}}/organizations/{{version}}/{{_id}}/parents",
+                            "protocol": "{{http}}",
+                            "host": [
+                                "{{url}}"
+                            ],
+                            "path": [
+                                "organizations",
+                                "{{version}}",
+                                "{{_id}}",
+                                "parents"
+                            ]
+                        }
+                    },
+                    "response": []
+                }
+            ],
+            "id": "87eb508a-8054-4314-aa56-f376f81c98f5"
+        },
+        {
+            "name": "Pets",
+            "item": [
+                {
+                    "name": "New Pet",
+                    "id": "df057163-0d1e-43f0-9ac7-40637a044ee2",
+                    "protocolProfileBehavior": {
+                        "disableBodyPruning": true
+                    },
+                    "request": {
+                        "auth": {
+                            "type": "apikey",
+                            "apikey": [
+                                {
+                                    "key": "value",
+                                    "value": "{{x-api-key}}",
+                                    "type": "string"
+                                },
+                                {
+                                    "key": "key",
+                                    "value": "x-api-key",
+                                    "type": "string"
+                                },
+                                {
+                                    "key": "in",
+                                    "value": "header",
+                                    "type": "string"
+                                }
+                            ]
+                        },
+                        "method": "POST",
+                        "header": [],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\r\n    \"name\":\"Hicham Hallou\",\r\n    \"species\":\"Cat\",\r\n    \"foods\":{\r\n        \"favorites\": [\r\n        \"chips\",\r\n        \"kebab\",\r\n        \"snickers\"\r\n    ]},\r\n    \"photo\":\"https://learnwebcode.github.io/json-example/images/cat-1.jpg\"\r\n}",
+                            "options": {
+                                "raw": {
+                                    "language": "json"
+                                }
+                            }
+                        },
+                        "url": {
+                            "raw": "{{http}}://{{url}}/pets/{{version}}",
+                            "protocol": "{{http}}",
+                            "host": [
+                                "{{url}}"
+                            ],
+                            "path": [
+                                "pets",
+                                "{{version}}"
+                            ]
+                        }
+                    },
+                    "response": []
+                },
+                {
+                    "name": "Find a Pet",
+                    "id": "22cec4d3-8aac-4f9c-8aab-d1b53f72fad0",
+                    "protocolProfileBehavior": {
+                        "disableBodyPruning": true
+                    },
+                    "request": {
+                        "auth": {
+                            "type": "apikey",
+                            "apikey": [
+                                {
+                                    "key": "value",
+                                    "value": "{{x-api-key}}",
+                                    "type": "string"
+                                },
+                                {
+                                    "key": "key",
+                                    "value": "x-api-key",
+                                    "type": "string"
+                                },
+                                {
+                                    "key": "in",
+                                    "value": "header",
+                                    "type": "string"
+                                }
+                            ]
+                        },
+                        "method": "GET",
+                        "header": [],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "",
+                            "options": {
+                                "raw": {
+                                    "language": "json"
+                                }
+                            }
+                        },
+                        "url": {
+                            "raw": "{{http}}://{{url}}/pets/{{version}}/{{_id}}",
+                            "protocol": "{{http}}",
+                            "host": [
+                                "{{url}}"
+                            ],
+                            "path": [
+                                "pets",
+                                "{{version}}",
+                                "{{_id}}"
+                            ]
+                        }
+                    },
+                    "response": []
+                },
+                {
+                    "name": "Delete a Pet",
+                    "id": "0c2a2311-06fb-45b5-8740-07179e3cefed",
+                    "protocolProfileBehavior": {
+                        "disableBodyPruning": true
+                    },
+                    "request": {
+                        "auth": {
+                            "type": "apikey",
+                            "apikey": [
+                                {
+                                    "key": "value",
+                                    "value": "{{x-api-key}}",
+                                    "type": "string"
+                                },
+                                {
+                                    "key": "key",
+                                    "value": "x-api-key",
+                                    "type": "string"
+                                },
+                                {
+                                    "key": "in",
+                                    "value": "header",
+                                    "type": "string"
+                                }
+                            ]
+                        },
+                        "method": "DELETE",
+                        "header": [],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "",
+                            "options": {
+                                "raw": {
+                                    "language": "json"
+                                }
+                            }
+                        },
+                        "url": {
+                            "raw": "{{http}}://{{url}}/pets/{{version}}/{{_id}}",
+                            "protocol": "{{http}}",
+                            "host": [
+                                "{{url}}"
+                            ],
+                            "path": [
+                                "pets",
+                                "{{version}}",
+                                "{{_id}}"
+                            ]
+                        }
+                    },
+                    "response": []
+                },
+                {
+                    "name": "Update a Pet",
+                    "id": "a9171bf2-09ac-4275-b4a0-e91f2f62d60a",
+                    "protocolProfileBehavior": {
+                        "disableBodyPruning": true
+                    },
+                    "request": {
+                        "auth": {
+                            "type": "apikey",
+                            "apikey": [
+                                {
+                                    "key": "value",
+                                    "value": "{{x-api-key}}",
+                                    "type": "string"
+                                },
+                                {
+                                    "key": "key",
+                                    "value": "x-api-key",
+                                    "type": "string"
+                                },
+                                {
+                                    "key": "in",
+                                    "value": "header",
+                                    "type": "string"
+                                }
+                            ]
+                        },
+                        "method": "PATCH",
+                        "header": [],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\r\n    \"name\":\"Hicham Hallou2\",\r\n    \"species\":\"Cat\",\r\n    \"foods\":{\r\n        \"favorites\": [\r\n        \"chips\",\r\n        \"kebab\",\r\n        \"snickers\"\r\n    ]},\r\n    \"photo\":\"https://learnwebcode.github.io/json-example/images/cat-1.jpg\"\r\n}",
+                            "options": {
+                                "raw": {
+                                    "language": "json"
+                                }
+                            }
+                        },
+                        "url": {
+                            "raw": "{{http}}://{{url}}/pets/{{version}}/{{_id}}",
+                            "protocol": "{{http}}",
+                            "host": [
+                                "{{url}}"
+                            ],
+                            "path": [
+                                "pets",
+                                "{{version}}",
+                                "{{_id}}"
+                            ]
+                        }
+                    },
+                    "response": []
+                }
+            ],
+            "id": "41b3ade2-2881-4f63-95dd-176e23f35220"
+        }
+    ],
+    "variable": [
+        {
+            "id": "b79a2ff1-103e-4c2f-bd13-80a116a26ff7",
+            "key": "baseUrl",
+            "value": "https://api.dev.teksial-stage.io",
+            "type": "string"
+        }
+    ]
+}
